@@ -1,0 +1,19 @@
+{
+  "name": "@ev-fns/pipe",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.22"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
