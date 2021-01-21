@@ -8,6 +8,9 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "target": "ES2020"
   }
 }
