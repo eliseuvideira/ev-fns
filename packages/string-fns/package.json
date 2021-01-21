@@ -1,0 +1,21 @@
+{
+  "name": "@ev-fns/string-fns",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliseuvideira/ev-fns"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
+  }
+}
