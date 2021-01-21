@@ -1,8 +1,8 @@
 import openapiCommentParser, { ParserOptions } from "openapi-comment-parser";
-import { resolve } from "path";
+import appRoot from "app-root-path";
 
 const options: ParserOptions = {
-  cwd: resolve(__dirname, "..", ".."),
+  cwd: appRoot.path,
   extension: [".js", ".cjs", ".mjs", ".ts", ".tsx", ".jsx", ".yaml", ".yml"],
   include: ["**"],
   exclude: [
