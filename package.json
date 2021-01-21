@@ -1,6 +1,6 @@
 {
   "name": "ev-fns",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "index.js",
   "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
   "license": "MIT",
