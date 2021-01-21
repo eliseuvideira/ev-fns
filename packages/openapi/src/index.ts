@@ -23,4 +23,4 @@ const openapi = ({ path, redirect }: OpenAPIOptions = {}) => {
   return router;
 };
 
-export default openapi;
+export = openapi;
