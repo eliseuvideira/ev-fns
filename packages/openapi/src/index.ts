@@ -9,7 +9,7 @@ interface OpenAPIOptions {
 
 const trailSlash = (str: string) => str.replace(/\/+$/, "") + "/";
 
-export const openapi = ({ path, redirect }: OpenAPIOptions = {}) => {
+const openapi = ({ path, redirect }: OpenAPIOptions = {}) => {
   const router = Router();
 
   if (redirect == null || redirect) {
