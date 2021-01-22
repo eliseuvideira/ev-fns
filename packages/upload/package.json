@@ -1,0 +1,31 @@
+{
+  "name": "@ev-fns/upload",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/multer": "^1.4.5",
+    "@types/node": "^14.14.22",
+    "@types/supertest": "^2.0.10",
+    "supertest": "^6.1.1"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ev-fns/endpoint": "^0.1.0",
+    "@ev-fns/errors": "^0.1.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "nanoid": "^3.1.20",
+    "pretty-bytes": "^5.5.0"
+  }
+}
