@@ -1,0 +1,26 @@
+{
+  "name": "@ev-fns/validation",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/joi": "^17.2.3",
+    "@types/node": "^14.14.22"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@ev-fns/endpoint": "^0.1.1",
+    "@ev-fns/errors": "^0.1.0",
+    "joi": "^17.3.0"
+  }
+}
