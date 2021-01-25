@@ -1,6 +1,6 @@
 {
   "name": "@ev-fns/gzip",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -16,5 +16,8 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@ev-fns/pipe": "^0.1.1"
   }
 }
