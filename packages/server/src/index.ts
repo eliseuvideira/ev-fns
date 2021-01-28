@@ -3,8 +3,8 @@ import http from "http";
 const server = async (
   app: Express.Application,
   port: number,
-  before?: () => Promise<void>,
-  after?: () => Promise<void>
+  before?: () => void,
+  after?: () => void
 ) => {
   const server = http.createServer(app);
 
