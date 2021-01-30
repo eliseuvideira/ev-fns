@@ -1,4 +1,10 @@
-import { removeKeys, removeUndefined, toCamel, toSnake } from "../src/index";
+import {
+  pickKeys,
+  removeKeys,
+  removeUndefined,
+  toCamel,
+  toSnake,
+} from "../src/index";
 
 describe("removeKeys", () => {
   it("removes keys", () => {
@@ -110,5 +116,15 @@ describe("toSnake", () => {
         updated_at: new Date("2020-08-09T00:15:51Z"),
       })
     );
+  });
+});
+
+describe("pickKeys", () => {
+  it("picks only choosen keys", () => {
+    expect.assertions(2);
+
+    expect(pickKeys({ a: 1, b: 2, c: 3 }, ["a"])).toEqual({ a: 1 });
+
+    expect(pickKeys({ a: 1, b: 2, c: 3 }, ["a", "b"])).toEqual({ a: 1, b: 2 });
   });
 });
