@@ -4,8 +4,6 @@ import fs from "fs";
 import path from "path";
 
 describe("dotenv", () => {
-  const _ = console.info;
-
   const envPath = path.join(__dirname, ".env");
   const samplePath = path.join(__dirname, ".env.example");
 
@@ -37,16 +35,31 @@ describe("dotenv", () => {
     expect(process.env.KEYWORD).toBe("value");
   });
 
-  beforeEach(async () => {
-    console.info = () => {};
+  it("has startup default function", async () => {
+    expect.assertions(1);
 
+    await fs.promises.writeFile(samplePath, "KEYWORD=");
+    await fs.promises.writeFile(envPath, "KEYWORD=value");
+
+    const info = jest.fn();
+
+    const _ = console.info;
+    console.info = info;
+    try {
+      dotenv({ path: envPath, sample: samplePath }, dotenv.startup);
+
+      expect(info).toHaveBeenCalled();
+    } finally {
+      console.info = _;
+    }
+  });
+
+  beforeEach(async () => {
     await fs.promises.writeFile(samplePath, "");
     await fs.promises.writeFile(envPath, "");
   });
 
   afterEach(async () => {
-    console.info = _;
-
     await fs.promises.unlink(samplePath);
     await fs.promises.unlink(envPath);
   });
