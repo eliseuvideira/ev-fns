@@ -1,6 +1,6 @@
 {
   "name": "@ev-fns/server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -23,6 +23,7 @@
     "@types/node": "^14.14.22"
   },
   "dependencies": {
+    "@types/multer": "^1.4.5",
     "express": "^4.17.1"
   }
 }
