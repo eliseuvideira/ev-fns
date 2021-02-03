@@ -1,0 +1,28 @@
+{
+  "name": "@ev-fns/model",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=15"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "pg": "^8.5.1"
+  },
+  "dependencies": {
+    "@ev-fns/dotenv": "^0.2.1",
+    "@ev-fns/object-fns": "^0.2.1",
+    "@ev-fns/string-fns": "^0.1.0",
+    "joi": "^17.3.0",
+    "knex": "^0.21.17"
+  }
+}

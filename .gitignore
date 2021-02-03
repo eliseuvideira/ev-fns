@@ -1,5 +1,6 @@
 coverage/
 lib/
 node_modules/
+.env
 *.log
 *.error

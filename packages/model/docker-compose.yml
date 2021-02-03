@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  test_postgres:
+    container_name: ev-fns-model
+    image: clkao/postgres-plv8:12-2
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_DATABASE
+    restart: always
+    ports:
+      - $DB_PORT:$DB_PORT
+    volumes:
+      - test_postgres_volume:/var/lib/postgresql/data
+
+volumes:
+  test_postgres_volume:
