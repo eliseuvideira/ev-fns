@@ -22,7 +22,9 @@ export const createModel = <T>(
   const insertOne = createInsertOne<T>(table, ignoreKeys);
   const updateOne = createUpdateOne<T>(table, getPrimaryKey, ignoreKeys);
   const deleteOne = createDeleteOne<T>(table, getPrimaryKey);
-  const model: Model<T> = {
+  const searchQuery = createSearchQuery<T>(find, count);
+
+  return {
     table,
     fields,
     find,
@@ -32,7 +34,6 @@ export const createModel = <T>(
     insertOne,
     updateOne,
     deleteOne,
+    searchQuery,
   };
-  model.searchQuery = createSearchQuery<T>(model);
-  return model;
 };

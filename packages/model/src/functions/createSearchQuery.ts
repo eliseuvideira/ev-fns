@@ -1,6 +1,7 @@
 import Knex from "knex";
 import { FilterProps } from "../common/FilterProps";
-import { Model } from "../common/Model";
+import { ModelCount } from "../common/ModelCount";
+import { ModelFind } from "../common/ModelFind";
 import { ModifyFunction } from "../common/ModifyFunction";
 import { PaginationProps } from "../common/PaginationProps";
 import { getOrderBy } from "./getOrderBy";
@@ -16,7 +17,10 @@ const merge = <T>(
   return { ...obj1, ...obj2 };
 };
 
-export const createSearchQuery = <T>(ModelClass: Model<T>) => async (
+export const createSearchQuery = <T>(
+  find: ModelFind<T>,
+  count: ModelCount<T>
+) => async (
   query: any,
   database: Knex,
   filter: FilterProps<T> | null = null,
@@ -34,7 +38,7 @@ export const createSearchQuery = <T>(ModelClass: Model<T>) => async (
     $sort: filter?.$sort != null ? filter.$sort : getOrderBy($sort),
   };
 
-  const totalItems = await ModelClass.count(database, mergedFilter, modify);
+  const totalItems = await count(database, mergedFilter, modify);
 
   const pagination = {
     page,
@@ -43,7 +47,7 @@ export const createSearchQuery = <T>(ModelClass: Model<T>) => async (
     lastPage: Math.ceil(totalItems / perPage),
   };
 
-  const items = await ModelClass.find(database, mergedFilter, modify);
+  const items = await find(database, mergedFilter, modify);
 
   return [items, mergedFilter, pagination];
 };
