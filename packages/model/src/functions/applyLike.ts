@@ -6,10 +6,9 @@ export const applyLike = <T>(
   likeFields: Partial<T>
 ): void => {
   for (const key of Object.keys(likeFields)) {
-    builder.andWhere(
-      camelToSnake(key),
-      "like",
-      `%${likeFields[key as keyof T]}%`
+    builder.andWhereRaw(
+      `lower(unaccent(${camelToSnake(key)})) like lower(unaccent(?))`,
+      ["%" + ((likeFields[key as keyof T] as any) || "") + "%"]
     );
   }
 };
