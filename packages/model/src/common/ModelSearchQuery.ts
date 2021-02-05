@@ -5,6 +5,6 @@ import { ModifyFunction } from "./ModifyFunction";
 export type ModelSearchQuery<T> = (
   query: any,
   database: Knex,
-  filter: FilterProps<T> | null,
-  modify: ModifyFunction | null
+  filter?: FilterProps<T> | null,
+  modify?: ModifyFunction | null
 ) => Promise<{ items: T[]; totalItems: number }>;
