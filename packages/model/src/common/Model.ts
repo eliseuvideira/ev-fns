@@ -4,6 +4,7 @@ import { ModelExists } from "./ModelExists";
 import { ModelFind } from "./ModelFind";
 import { ModelFindOne } from "./ModelFindOne";
 import { ModelInsertOne } from "./ModelInsertOne";
+import { ModelSearchQuery } from "./ModelSearchQuery";
 import { ModelUpdateOne } from "./ModelUpdateOne";
 
 export type Model<T> = {
@@ -16,5 +17,5 @@ export type Model<T> = {
   insertOne: ModelInsertOne<T>;
   updateOne: ModelUpdateOne<T>;
   deleteOne: ModelDeleteOne<T>;
-  searchQuery?: any;
+  searchQuery: ModelSearchQuery<T>;
 };
