@@ -16,7 +16,8 @@ export const createSearchQuery = <T>(
   query,
   database,
   filter = null,
-  modify = null
+  modify = null,
+  options = {}
 ) => {
   const { $offset, $limit, $eq, $like, $in, $sort } = query;
 
@@ -36,7 +37,7 @@ export const createSearchQuery = <T>(
 
   const totalItems = await count(database, mergedFilter, modify);
 
-  const items = await find(database, mergedFilter, modify);
+  const items = await find(database, mergedFilter, modify, options);
 
   return { items, totalItems };
 };
