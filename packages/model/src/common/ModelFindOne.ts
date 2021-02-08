@@ -5,5 +5,6 @@ import { ModifyFunction } from "./ModifyFunction";
 export type ModelFindOne<T> = (
   database: Knex,
   filter?: FilterProps<T> | null,
-  modify?: ModifyFunction | null
+  modify?: ModifyFunction | null,
+  options?: { populates?: string[] }
 ) => Promise<T | null>;

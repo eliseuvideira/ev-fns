@@ -5,6 +5,8 @@ import { ModelFind } from "./ModelFind";
 import { ModelFindOne } from "./ModelFindOne";
 import { ModelInsertOne } from "./ModelInsertOne";
 import { ModelSearchQuery } from "./ModelSearchQuery";
+import { ModelSetPopulateMany } from "./ModelSetPopulateMany";
+import { ModelSetPopulateOne } from "./ModelSetPopulateOne";
 import { ModelUpdateOne } from "./ModelUpdateOne";
 
 export type Model<T> = {
@@ -18,4 +20,6 @@ export type Model<T> = {
   updateOne: ModelUpdateOne<T>;
   deleteOne: ModelDeleteOne<T>;
   searchQuery: ModelSearchQuery<T>;
+  setPopulateMany: ModelSetPopulateMany<T>;
+  setPopulateOne: ModelSetPopulateOne<T>;
 };
