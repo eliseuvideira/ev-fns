@@ -6,6 +6,10 @@ export const createInsertMany = <T>(
   table: string,
   ignoreKeys: ModelIgnoreKeys<T> | null = null
 ): ModelInsertMany<T> => async (database, items) => {
+  if (!items.length) {
+    return [];
+  }
+
   const savedItems = await database
     .from(table)
     .insert(
