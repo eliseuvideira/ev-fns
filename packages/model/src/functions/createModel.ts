@@ -12,6 +12,8 @@ import { PopulateOneCallback } from "../common/PopulateOneCallback";
 import { PopulateManyCallback } from "../common/PopulateManyCallback";
 import { createSetPopulateMany } from "./createSetPopulateMany";
 import { createSetPopulateOne } from "./createSetPopulateOne";
+import { createInsertMany } from "./createInsertMany";
+import { createDeleteMany } from "./createDeleteMany";
 
 export const createModel = <T>(
   table: string,
@@ -27,8 +29,10 @@ export const createModel = <T>(
   const count = createCount<T>(table);
   const exists = createExists<T>(count);
   const insertOne = createInsertOne<T>(table, ignoreKeys);
+  const insertMany = createInsertMany<T>(table, ignoreKeys);
   const updateOne = createUpdateOne<T>(table, getPrimaryKey, ignoreKeys);
   const deleteOne = createDeleteOne<T>(table, getPrimaryKey);
+  const deleteMany = createDeleteMany<T>(table);
   const searchQuery = createSearchQuery<T>(find, count);
   const setPopulateOne = createSetPopulateOne(populatesOne);
   const setPopulateMany = createSetPopulateMany(populatesMany);
@@ -41,8 +45,10 @@ export const createModel = <T>(
     count,
     exists,
     insertOne,
+    insertMany,
     updateOne,
     deleteOne,
+    deleteMany,
     searchQuery,
     setPopulateOne,
     setPopulateMany,
