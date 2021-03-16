@@ -44,7 +44,7 @@ const upload = (props: UploadConfig) => {
           fileSize: props.fileSize,
         },
         fileFilter: (_, file, done) => {
-          if (props.mimetypes && !props.mimetypes.includes(file.fieldname)) {
+          if (props.mimetypes && !props.mimetypes.includes(file.mimetype)) {
             return done(
               new HttpError(
                 400,
