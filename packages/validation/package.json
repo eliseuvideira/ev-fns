@@ -1,6 +1,6 @@
 {
   "name": "@ev-fns/validation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -12,15 +12,19 @@
     "lib/**/*"
   ],
   "engines": {
-    "node": ">=15"
+    "node": ">=14"
   },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@ev-fns/endpoint": "^0.1.1",
-    "@ev-fns/errors": "^0.1.0",
-    "joi": "^17.3.0"
+    "@ev-fns/endpoint": "^0.1.2",
+    "@ev-fns/errors": "^0.1.1",
+    "@types/jest": "^26.0.21",
+    "joi": "^17.3.0",
+    "lerna": "^4.0.0",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.3"
   }
 }
