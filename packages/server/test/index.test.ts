@@ -14,7 +14,7 @@ describe("server", () => {
 
     const app = express();
 
-    const instance = await server(app, PORT);
+    const instance = await server({ app, port: PORT });
     try {
       expect(instance.listening).toBe(true);
 
@@ -40,7 +40,7 @@ describe("server", () => {
     const before = jest.fn();
     const after = jest.fn();
 
-    const instance = await server(app, PORT, before, after);
+    const instance = await server({ app, port: PORT, before, after });
     try {
       expect(instance.listening).toBe(true);
       expect(before).toHaveBeenCalled();
@@ -58,13 +58,13 @@ describe("server", () => {
     const app1 = express();
     const app2 = express();
 
-    const instance = await server(app1, PORT);
+    const instance = await server({ app: app1, port: PORT });
 
     try {
       expect(instance.listening).toBe(true);
 
       try {
-        await server(app2, PORT);
+        await server({ app: app2, port: PORT });
         fail();
       } catch (err) {
         expect(err).toBeDefined();
@@ -83,7 +83,7 @@ describe("server", () => {
     const app = express();
 
     try {
-      await server(app, PORT);
+      await server({ app, port: PORT });
       fail();
     } catch (err) {
       expect(err).toBeDefined();

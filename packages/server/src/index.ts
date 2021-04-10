@@ -1,11 +1,13 @@
 import http from "http";
 
-const server = async (
-  app: Express.Application,
-  port: number,
-  before?: () => void,
-  after?: () => void
-) => {
+interface ServerProps {
+  app: Express.Application;
+  port: number;
+  before?: () => Promise<void>;
+  after?: () => Promise<void>;
+}
+
+const server = async ({ app, port, before, after }: ServerProps) => {
   const server = http.createServer(app);
 
   if (before) {
