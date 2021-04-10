@@ -1,15 +1,22 @@
 import { Router } from "express";
 import { serve, setup } from "swagger-ui-express";
-import { config } from "./config";
+import { createConfig } from "./createConfig";
 
 interface OpenAPIOptions {
   path?: string;
   redirect?: boolean;
+  apiName?: string;
+  apiVersion?: string;
 }
 
 const trailSlash = (str: string) => str.replace(/\/+$/, "") + "/";
 
-const openapi = ({ path, redirect }: OpenAPIOptions = {}) => {
+const openapi = ({
+  path,
+  redirect,
+  apiName,
+  apiVersion,
+}: OpenAPIOptions = {}) => {
   const router = Router();
 
   if (redirect == null || redirect) {
@@ -17,6 +24,8 @@ const openapi = ({ path, redirect }: OpenAPIOptions = {}) => {
       res.redirect(trailSlash(path || "/api-docs"))
     );
   }
+
+  const config = createConfig({ apiName, apiVersion });
 
   router.use(path || "/api-docs", serve, setup(config));
 

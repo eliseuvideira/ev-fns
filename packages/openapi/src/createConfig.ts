@@ -26,18 +26,25 @@ const options: ParserOptions = {
   throwLevel: "off",
 };
 
-const spec = openapiCommentParser(options);
+interface CreateConfigProps {
+  apiName?: string;
+  apiVersion?: string;
+}
 
-const baseInfo = {
-  openapi: "3.0.0",
-  info: {
-    title: process.env.npm_package_name,
-    version: process.env.npm_package_version,
-  },
-  servers: [{ name: "localhost", url: `/` }],
-};
+export const createConfig = ({ apiName, apiVersion }: CreateConfigProps) => {
+  const spec = openapiCommentParser(options);
 
-export const config = {
-  ...spec,
-  ...baseInfo,
+  const baseInfo = {
+    openapi: "3.0.0",
+    info: {
+      title: apiName || process.env.npm_package_name,
+      version: apiVersion || process.env.npm_package_version,
+    },
+    servers: [{ name: "localhost", url: `/` }],
+  };
+
+  return {
+    ...spec,
+    ...baseInfo,
+  };
 };
