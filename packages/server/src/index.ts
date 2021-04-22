@@ -3,15 +3,15 @@ import http from "http";
 interface ServerProps {
   app: Express.Application;
   port: number;
-  before?: () => Promise<void>;
-  after?: () => Promise<void>;
+  before?: (server: http.Server) => Promise<void>;
+  after?: (server: http.Server) => Promise<void>;
 }
 
 const server = async ({ app, port, before, after }: ServerProps) => {
   const server = http.createServer(app);
 
   if (before) {
-    await before();
+    await before(server);
   }
 
   await new Promise<void>((resolve, reject) => {
@@ -21,7 +21,7 @@ const server = async ({ app, port, before, after }: ServerProps) => {
   });
 
   if (after) {
-    await after();
+    await after(server);
   }
 
   return server;
