@@ -30,11 +30,11 @@ const openapi = ({
 
   const yaml = YAML.stringify(config);
 
-  router.use(path || "/api-docs", serve, setup(config));
-
   router.get((path || "/api-docs") + "/openapi.yml", (req, res) =>
     res.status(200).send(yaml).end()
   );
+
+  router.use(path || "/api-docs", serve, setup(config));
 
   return router;
 };
