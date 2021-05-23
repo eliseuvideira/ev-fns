@@ -32,7 +32,12 @@ const openapi = ({
   const yaml = YAML.stringify(config);
 
   router.get((path || "/api-docs") + "/openapi.yml", (req, res) =>
-    Readable.from([yaml]).pipe(res.status(200))
+    Readable.from([yaml]).pipe(
+      res
+        .header("Content-Disposition", 'inline; filename="openapi.yml"')
+        .contentType("text/x-yaml")
+        .status(200)
+    )
   );
 
   router.use(path || "/api-docs", serve, setup(config));
