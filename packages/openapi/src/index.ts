@@ -2,6 +2,7 @@ import { Router } from "express";
 import { serve, setup } from "swagger-ui-express";
 import { createConfig } from "./createConfig";
 import YAML from "yaml";
+import { Readable } from "stream";
 
 interface OpenAPIOptions {
   path?: string;
@@ -31,7 +32,7 @@ const openapi = ({
   const yaml = YAML.stringify(config);
 
   router.get((path || "/api-docs") + "/openapi.yml", (req, res) =>
-    res.status(200).send(yaml).end()
+    Readable.from([yaml]).pipe(res.status(200))
   );
 
   router.use(path || "/api-docs", serve, setup(config));
