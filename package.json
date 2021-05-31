@@ -22,6 +22,7 @@
   "scripts": {
     "bootstrap": "lerna run bootstrap",
     "build": "lerna run build",
+    "clean": "lerna clean",
     "format": "prettier --write 'packages/*/src/**'",
     "lint": "eslint --max-warnings=0 'packages/*/src/**'",
     "prepare": "husky install",
