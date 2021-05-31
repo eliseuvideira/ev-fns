@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   export namespace Express {
     export interface Request {

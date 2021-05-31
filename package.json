@@ -8,6 +8,9 @@
   "repository": "git@github.com:eliseuvideira/ev-fns.git",
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
     "jest": "^27.0.3",
     "lerna": "^4.0.0",
     "prettier": "^2.3.0",
@@ -17,6 +20,7 @@
   "scripts": {
     "build": "lerna run build",
     "format": "prettier --write 'packages/*/src/*'",
+    "lint": "eslint --max-warnings=0 'packages/*/src/*'",
     "test": "jest"
   }
 }
