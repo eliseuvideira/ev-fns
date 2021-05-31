@@ -19,8 +19,8 @@
   },
   "scripts": {
     "build": "lerna run build",
-    "format": "prettier --write 'packages/*/src/*'",
-    "lint": "eslint --max-warnings=0 'packages/*/src/*'",
+    "format": "prettier --write 'packages/*/src/**'",
+    "lint": "eslint --max-warnings=0 'packages/*/src/**'",
     "test": "jest"
   }
 }

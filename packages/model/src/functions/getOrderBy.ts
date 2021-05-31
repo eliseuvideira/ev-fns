@@ -11,7 +11,7 @@ export const getOrderBy = (sort: string): OrderByField[] => {
       ...prev,
       [column.split(":")[0]]: column.split(":")[1] || "asc",
     }),
-    {}
+    {},
   );
   return Object.keys(columns).map((key) => ({
     column: key,

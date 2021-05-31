@@ -19,7 +19,7 @@ export const createModel = <T>(
   table: string,
   fields: (keyof T & string)[],
   getPrimaryKey: (props: T) => Partial<T>,
-  ignoreKeys: ModelIgnoreKeys<T> | null = null
+  ignoreKeys: ModelIgnoreKeys<T> | null = null,
 ): Model<T> => {
   const populatesOne = new Map<string, PopulateOneCallback<T>>();
   const populatesMany = new Map<string, PopulateManyCallback<T>>();

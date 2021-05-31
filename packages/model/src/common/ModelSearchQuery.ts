@@ -7,5 +7,5 @@ export type ModelSearchQuery<T> = (
   database: Knex,
   filter?: FilterProps<T> | null,
   modify?: ModifyFunction | null,
-  options?: { populates?: string[] }
+  options?: { populates?: string[] },
 ) => Promise<{ items: T[]; totalItems: number }>;

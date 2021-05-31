@@ -4,7 +4,7 @@ import { PropsToArray } from "../common/PropsToArray";
 
 export const applyIn = <T>(
   builder: Knex.QueryBuilder,
-  inFields: PropsToArray<T>
+  inFields: PropsToArray<T>,
 ): void => {
   for (const key of Object.keys(inFields)) {
     builder.whereIn(camelToSnake(key), inFields[key as keyof T]);

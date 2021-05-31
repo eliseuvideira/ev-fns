@@ -16,13 +16,13 @@ export const createSchemaSearch = <T>(
     $like?: (keyof T & string)[];
     $in?: (keyof T & string)[];
     $sort?: (keyof T & string)[];
-  }
+  },
 ): Joi.ObjectSchema => {
   const sortFields = ModelClass.fields.filter(
     (field) =>
       !ignoreKeys ||
       !ignoreKeys.$sort ||
-      !ignoreKeys.$sort.includes(field as keyof T & string)
+      !ignoreKeys.$sort.includes(field as keyof T & string),
   );
 
   return Joi.object()
@@ -37,9 +37,9 @@ export const createSchemaSearch = <T>(
         .regex(
           new RegExp(
             `^(${sortFields.join("|")})(:(asc|desc))?(,(${sortFields.join(
-              "|"
-            )})(:(asc|desc))?)*$`
-          )
+              "|",
+            )})(:(asc|desc))?)*$`,
+          ),
         )
         .default(`${sortFields[0]}:asc`),
       $eq: getEqSchema(search, ignoreKeys?.$eq),

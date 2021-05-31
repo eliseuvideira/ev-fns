@@ -8,7 +8,7 @@ export class HttpError extends Error {
 }
 
 export const isHttpError = <T extends { message: string; status?: number }>(
-  err: HttpError | T
+  err: HttpError | T,
 ): err is HttpError =>
   err instanceof HttpError ||
   (typeof err.status === "number" && typeof err.message === "string");

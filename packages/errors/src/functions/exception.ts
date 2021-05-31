@@ -1,7 +1,8 @@
 import { ErrorRequestHandler } from "express";
 import { isHttpError } from "./HttpError";
 
-export const exception: ErrorRequestHandler = (err, req, res, _next) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const exception: ErrorRequestHandler = (err, req, res, next) => {
   const status = isHttpError(err) ? err.status : 500;
   let message: string = err.message;
   if (status === 500) {

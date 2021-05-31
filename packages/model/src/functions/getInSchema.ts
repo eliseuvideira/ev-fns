@@ -4,7 +4,7 @@ import { SchemaProps } from "../common/SchemaProps";
 
 export const getInSchema = <T extends SchemaProps<Partial<T>>>(
   search: T,
-  ignoreKeys: (keyof T)[] = []
+  ignoreKeys: (keyof T)[] = [],
 ): Joi.Schema => {
   const keys = Object.keys(removeKeys(search, ignoreKeys)) as (keyof T)[];
 

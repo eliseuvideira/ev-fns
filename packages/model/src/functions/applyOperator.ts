@@ -4,13 +4,13 @@ import Knex from "knex";
 export const applyOperator = <T>(
   builder: Knex.QueryBuilder,
   fields: Partial<T>,
-  operator: ">=" | ">" | "<=" | "<"
+  operator: ">=" | ">" | "<=" | "<",
 ) => {
   for (const key of Object.keys(fields)) {
     builder.andWhere(
       camelToSnake(key),
       operator,
-      fields[key as keyof T] as any
+      fields[key as keyof T] as any,
     );
   }
 };

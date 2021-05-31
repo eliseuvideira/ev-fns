@@ -6,5 +6,5 @@ export type ModelFindOne<T> = (
   database: Knex,
   filter?: FilterProps<T> | null,
   modify?: ModifyFunction | null,
-  options?: { populates?: string[] }
+  options?: { populates?: string[] },
 ) => Promise<T | null>;

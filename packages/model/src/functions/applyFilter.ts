@@ -10,7 +10,7 @@ import { orderByToSnake } from "./orderByToSnake";
 
 export const applyFilter = <T>(
   builder: Knex.QueryBuilder,
-  filter: FilterProps<T>
+  filter: FilterProps<T>,
 ): void => {
   if (filter.$ge) {
     applyGe(builder, filter.$ge);
