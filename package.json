@@ -20,6 +20,7 @@
     "typescript": "^4.3.2"
   },
   "scripts": {
+    "bootstrap": "lerna run bootstrap",
     "build": "lerna run build",
     "format": "prettier --write 'packages/*/src/**'",
     "lint": "eslint --max-warnings=0 'packages/*/src/**'",
