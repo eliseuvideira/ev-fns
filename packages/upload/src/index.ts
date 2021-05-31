@@ -50,8 +50,8 @@ const upload = (props: UploadConfig) => {
                 400,
                 `"${file.fieldname}" mimetype "${
                   file.mimetype
-                }" must be one of [${props.mimetypes.join(", ")}]`
-              )
+                }" must be one of [${props.mimetypes.join(", ")}]`,
+              ),
             );
           }
           return done(null, true);
@@ -71,7 +71,7 @@ const upload = (props: UploadConfig) => {
                 400,
                 `"${props.field}" too large, maximum file size allowed is ${
                   props.fileSize
-                } (${prettyBytes(props.fileSize)})`
+                } (${prettyBytes(props.fileSize)})`,
               );
               break;
           }

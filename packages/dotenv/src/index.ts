@@ -2,7 +2,7 @@ import { config, DotenvSafeOptions } from "dotenv-safe";
 
 const dotenv = (
   options?: DotenvSafeOptions,
-  done?: (env: Record<string, any>) => void
+  done?: (env: Record<string, any>) => void,
 ) => {
   config(options);
   if (done) {

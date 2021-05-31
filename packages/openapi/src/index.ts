@@ -23,7 +23,7 @@ const openapi = ({
 
   if (redirect == null || redirect) {
     router.get("/", (req, res) =>
-      res.redirect(trailSlash(path || "/api-docs"))
+      res.redirect(trailSlash(path || "/api-docs")),
     );
   }
 
@@ -36,8 +36,8 @@ const openapi = ({
       res
         .header("Content-Disposition", 'inline; filename="openapi.yml"')
         .contentType("text/x-yaml")
-        .status(200)
-    )
+        .status(200),
+    ),
   );
 
   router.use(path || "/api-docs", serve, setup(config));
