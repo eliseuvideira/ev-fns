@@ -1,17 +1,11 @@
 {
   "name": "ev-fns",
-  "version": "0.3.0",
+  "version": "N/A",
   "main": "index.js",
   "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eliseuvideira/ev-fns"
-  },
+  "repository": "git@github.com:eliseuvideira/ev-fns.git",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "jest": "^27.0.3",
