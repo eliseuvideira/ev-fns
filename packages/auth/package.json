@@ -10,6 +10,7 @@
   "engines": {
     "node": ">=14"
   },
+  "repository": "git@github.com:eliseuvideira/ev-fns.git",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "rm -rf lib && yarn build"
@@ -23,13 +24,14 @@
     "@ev-fns/endpoint": "^0.1.1",
     "@ev-fns/errors": "^0.1.0"
   },
+  "peerDependencies": {
+    "express": "^4.17.1"
+  },
   "keywords": [
     "auth",
     "express",
     "middleware",
-    "bearer"
-  ],
-  "peerDependencies": {
-    "express": "^4.17.1"
-  }
+    "bearer",
+    "token"
+  ]
 }
