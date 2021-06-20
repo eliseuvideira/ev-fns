@@ -29,34 +29,32 @@ app.listen(3000, () => {
 });
 ```
 
-### Try it out
+## Try it out
 
 ```shell
 $ API_TOKEN=super_secret node index.js
 ```
 
-- Invalid request
+1. ### Invalid request
 
-```shell
-$ curl -i http://localhost:3000
-```
+   ```shell
+   $ curl -i http://localhost:3000
+   ```
 
-```shell
-HTTP/1.1 401
-...
-{"message":"Unauthorized"}
-```
+   ```shell
+   HTTP/1.1 401
+   ...
+   {"message":"Unauthorized"}
+   ```
 
-- Valid request
+2. ### Valid request
 
-```shell
-$ curl -i -H "Authorization: Bearer super_secret" http://localhost:3000
-```
+   ```shell
+   $ curl -i -H "Authorization: Bearer super_secret" http://localhost:3000
+   ```
 
-```shell
-HTTP/1.1 200
-...
-{"message":"Hello World 👋!"}
-```
-
----
+   ```shell
+   HTTP/1.1 200
+   ...
+   {"message":"Hello World 👋!"}
+   ```
