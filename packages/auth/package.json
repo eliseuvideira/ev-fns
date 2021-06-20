@@ -15,12 +15,21 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@types/express": "^4.17.11",
-    "@types/node": "^14.14.22"
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.4",
+    "express": "^4.17.1"
   },
   "dependencies": {
     "@ev-fns/endpoint": "^0.1.1",
-    "@ev-fns/errors": "^0.1.0",
+    "@ev-fns/errors": "^0.1.0"
+  },
+  "keywords": [
+    "auth",
+    "express",
+    "middleware",
+    "bearer"
+  ],
+  "peerDependencies": {
     "express": "^4.17.1"
   }
 }

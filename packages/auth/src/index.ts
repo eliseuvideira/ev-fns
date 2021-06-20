@@ -4,20 +4,17 @@ import { HttpError } from "@ev-fns/errors";
 
 interface AuthProps {
   token: string;
-  getToken?: (req: Request) => string | undefined;
+  getToken?: (req: Request) => string;
 }
 
 const TOKEN_PREFIX = "Bearer ";
 
-const auth = ({ token, getToken }: AuthProps) => {
-  let getTokenDefault = (req: Request) => req.headers["authorization"];
-
-  if (getToken) {
-    getTokenDefault = getToken;
-  }
-
-  return endpoint(async (req, res, next) => {
-    const auth = getTokenDefault(req);
+export const createAuth = ({
+  token,
+  getToken = (req: Request) => req.headers["authorization"] || "",
+}: AuthProps) =>
+  endpoint(async (req, res, next) => {
+    const auth = getToken(req);
 
     if (!auth || !auth.startsWith(TOKEN_PREFIX)) {
       res.set("WWW-Authenticate", "Bearer");
@@ -32,6 +29,3 @@ const auth = ({ token, getToken }: AuthProps) => {
 
     next();
   });
-};
-
-export = auth;

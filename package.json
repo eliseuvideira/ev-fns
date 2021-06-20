@@ -1,7 +1,7 @@
 {
   "name": "ev-fns",
   "version": "N/A",
-  "main": "index.js",
+  "main": "N/A",
   "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -23,10 +23,12 @@
     "bootstrap": "lerna run bootstrap",
     "build": "lerna run build",
     "clean": "lerna clean",
+    "coverage": "jest --coverage && xdg-open coverage/lcov-report/index.html &>/dev/null",
     "format": "prettier --write 'packages/*/src/**'",
     "lint": "eslint --max-warnings=0 'packages/*/src/**'",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "lint-staged": {
     "*.{js,ts}": [
