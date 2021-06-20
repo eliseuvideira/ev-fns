@@ -174,6 +174,32 @@ describe("dotenv", () => {
     }
   });
 
+  it("works if no props passed", async () => {
+    expect.assertions(1);
+
+    const value = crypto.randomBytes(32).toString("hex");
+
+    const samplePath = path.join(__dirname, "..", "..", "..", ".env.example");
+    const envPath = path.join(__dirname, "..", "..", "..", ".env");
+
+    await fs.promises.writeFile(samplePath, "KEYWORD=");
+    try {
+      await fs.promises.writeFile(envPath, `KEYWORD=${value}`);
+
+      delete process.env.KEYWORD;
+
+      try {
+        dotenv();
+
+        expect(process.env.KEYWORD).toBe(value);
+      } finally {
+        await fs.promises.unlink(envPath);
+      }
+    } finally {
+      await fs.promises.unlink(samplePath);
+    }
+  });
+
   beforeEach(async () => {
     await fs.promises.writeFile(samplePath, "");
     await fs.promises.writeFile(envPath, "");

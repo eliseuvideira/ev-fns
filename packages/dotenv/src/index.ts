@@ -19,7 +19,7 @@ export const dotenv = ({
     }
   },
   ...props
-}: DotenvProps) => {
+}: DotenvProps = {}) => {
   config(props);
   if (output) {
     output();
