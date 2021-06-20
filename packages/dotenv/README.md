@@ -7,7 +7,7 @@
 ![version](https://img.shields.io/npm/v/@ev-fns/dotenv)
 ![node](https://img.shields.io/node/v/@ev-fns/dotenv)
 ![downloads](https://img.shields.io/npm/dw/@ev-fns/dotenv)
-![dependencies](https://img.shields.io/librariesio/release/npm/@ev-fns/dotenv)
+![dependencies](https://img.shields.io/david/eliseuvideira/ev-fns?path=packages%2Fdotenv)
 
 ## Install
 
