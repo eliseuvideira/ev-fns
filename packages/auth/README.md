@@ -1,8 +1,13 @@
 # @ev-fns/auth
 
-authorization middleware for expressjs
+> Authorization middleware for expressjs
 
 - createAuth `createAuth: ({ token, getToken }: { token: string, getToken?: (req: express.Request) => string }) => express.RequestHandler`
+
+![version](https://img.shields.io/npm/v/@ev-fns/auth)
+![node](https://img.shields.io/node/v/@ev-fns/auth)
+![downloads](https://img.shields.io/npm/dw/@ev-fns/auth)
+![dependencies](https://img.shields.io/librariesio/release/npm/@ev-fns/auth)
 
 ## Install
 
@@ -22,6 +27,10 @@ const auth = createAuth({ token: process.env.API_TOKEN });
 
 app.get("/", auth, (req, res) => {
   res.status(200).json({ message: "Hello World 👋!" });
+});
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({ message: err.message });
 });
 
 app.listen(3000, () => {
