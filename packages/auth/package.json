@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "rm -rf lib && yarn build"
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
