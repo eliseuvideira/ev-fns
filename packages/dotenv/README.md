@@ -21,8 +21,6 @@ yarn add @ev-fns/dotenv
 const { dotenv } = require("@ev-fns/dotenv");
 
 dotenv();
-
-console.log(process.env.NODE_ENV);
 ```
 
 ## Try it out
@@ -34,19 +32,25 @@ $ echo "NODE_ENV=" >.env.example
 1. Invalid env variables
 
    ```shell
-   $ node index.js 2>/dev/null && echo "no error" || echo "error"
+   $ node index.js; echo $?
    ```
 
    ```shell
-   error
+   MissingEnvVarsError...
+   ...
+   missing: [ 'NODE_ENV' ],
+   ...
+   1
    ```
 
 2. Valid env variables
 
    ```shell
-   $ NODE_ENV=development node index.js
+   $ NODE_ENV=development VERSION=0.1.0 node index.js; echo $?
    ```
 
    ```shell
-   development
+   🌟 development
+   🔖 0.1.0
+   0
    ```
