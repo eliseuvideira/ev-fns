@@ -10,20 +10,24 @@
   "engines": {
     "node": ">=14"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eliseuvideira/ev-fns"
-  },
+  "repository": "git@github.com:eliseuvideira/ev-fns.git",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "rm -rf lib && yarn build"
   },
   "devDependencies": {
-    "@types/node": "^14.14.22"
+    "@types/node": "^15.12.4"
   },
   "dependencies": {
     "@types/dotenv-safe": "^8.1.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0"
-  }
+  },
+  "peerDependencies": {},
+  "keywords": [
+    "dotenv",
+    "environment",
+    "variables",
+    "typescript"
+  ]
 }
