@@ -8,6 +8,7 @@
 ![node](https://img.shields.io/node/v/@ev-fns/dotenv)
 ![downloads](https://img.shields.io/npm/dw/@ev-fns/dotenv)
 ![dependencies](https://img.shields.io/david/eliseuvideira/ev-fns?path=packages%2Fdotenv)
+[![github](https://img.shields.io/github/stars/eliseuvideira/ev-fns?style=social)](https://github.com/eliseuvideira/ev-fns)
 
 ## Install
 
