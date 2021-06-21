@@ -4,21 +4,31 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
-  "devDependencies": {
-    "@types/express": "^4.17.11",
-    "@types/node": "^14.14.22"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  },
   "files": [
     "lib/**/*"
   ],
   "engines": {
     "node": ">=14"
   },
+  "repository": "git@github.com:eliseuvideira/ev-fns.git",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "yarn build"
-  }
+    "prepublishOnly": "rm -rf lib && yarn build"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^15.12.4",
+    "express": "^4.17.1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "express": "^4.17.1"
+  },
+  "keywords": [
+    "express",
+    "async",
+    "request",
+    "handler",
+    "middleware"
+  ]
 }
