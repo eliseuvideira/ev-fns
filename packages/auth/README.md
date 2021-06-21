@@ -8,6 +8,7 @@
 ![node](https://img.shields.io/node/v/@ev-fns/auth)
 ![downloads](https://img.shields.io/npm/dw/@ev-fns/auth)
 ![dependencies](https://img.shields.io/david/eliseuvideira/ev-fns?path=packages%2Fauth)
+[![github](https://img.shields.io/github/stars/eliseuvideira/ev-fns?style=social)](https://github.com/eliseuvideira/ev-fns)
 
 ## Install
 
