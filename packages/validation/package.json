@@ -5,6 +5,7 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/joi": "^17.2.3",
     "@types/node": "^14.14.22"
   },

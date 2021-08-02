@@ -1,4 +1,4 @@
-import Knex from "knex";
+import { Knex } from "knex";
 import { FilterProps } from "../common/FilterProps";
 import { ModifyFunction } from "../common/ModifyFunction";
 import { applyFilter } from "./applyFilter";

@@ -14,6 +14,7 @@ services:
       - $DB_PORT:$DB_PORT
     volumes:
       - test_postgres_volume:/var/lib/postgresql/data
+    command: -p $DB_PORT
 
 volumes:
   test_postgres_volume:

@@ -1,4 +1,4 @@
-import Knex from "knex";
+import { Knex } from "knex";
 import { applyOperator } from "./applyOperator";
 
 export const applyLt = <T>(builder: Knex.QueryBuilder, fields: Partial<T>) =>

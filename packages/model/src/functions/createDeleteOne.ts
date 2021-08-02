@@ -1,5 +1,5 @@
 import { toSnake } from "@ev-fns/object-fns";
-import Knex from "knex";
+import { Knex } from "knex";
 import { ModelDeleteOne } from "../common/ModelDeleteOne";
 
 export const createDeleteOne =

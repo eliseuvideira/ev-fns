@@ -1,5 +1,5 @@
 import { camelToSnake } from "@ev-fns/string-fns";
-import Knex from "knex";
+import { Knex } from "knex";
 
 export const applyLike = <T>(
   builder: Knex.QueryBuilder,

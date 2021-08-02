@@ -1,5 +1,5 @@
 import { camelToSnake } from "@ev-fns/string-fns";
-import Knex from "knex";
+import { Knex } from "knex";
 import { PropsToArray } from "../common/PropsToArray";
 
 export const applyIn = <T>(

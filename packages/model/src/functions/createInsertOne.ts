@@ -1,5 +1,5 @@
 import { removeKeys, toCamel, toSnake } from "@ev-fns/object-fns";
-import Knex from "knex";
+import { Knex } from "knex";
 import { ModelIgnoreKeys } from "../common/ModelIgnoreKeys";
 import { ModelInsertOne } from "../common/ModelInsertOne";
 
